@@ -4,6 +4,7 @@ import queryString from 'query-string';
 import { Link } from 'react-router-dom';
 import api from '../utils/api';
 import Player from './Player';
+import Loading from './Loading';
 
 class Results extends React.Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class Results extends React.Component {
     const loading = this.state.loading;
 
     if (loading === true) {
-      return <p>Loading</p>;
+      return <Loading text='Engaged in epic battle! please wait' speed={100} />;
     }
 
     if (error) {
